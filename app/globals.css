@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0b0e;
+  --bg-secondary: #111318;
+  --bg-card: #161a22;
+  --bg-card-hover: #1c2130;
+  --border: #252b3b;
+  --border-bright: #2e3650;
+  --text-primary: #e8eaf0;
+  --text-secondary: #7a8299;
+  --text-muted: #4a5066;
+  --accent-cyan: #00d4ff;
+  --accent-cyan-dim: rgba(0, 212, 255, 0.12);
+  --accent-green: #00e5a0;
+  --accent-green-dim: rgba(0, 229, 160, 0.12);
+  --accent-orange: #ff8c42;
+  --accent-orange-dim: rgba(255, 140, 66, 0.12);
+  --accent-red: #ff4d6d;
+  --accent-red-dim: rgba(255, 77, 109, 0.12);
+  --accent-purple: #9b72ff;
+  --accent-purple-dim: rgba(155, 114, 255, 0.12);
+  --font-mono: 'Space Mono', monospace;
+  --font-sans: 'DM Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  height: 100%;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeInUp 0.4s ease forwards; }
+.delay-1 { animation-delay: 0.05s; opacity: 0; }
+.delay-2 { animation-delay: 0.1s; opacity: 0; }
+.delay-3 { animation-delay: 0.15s; opacity: 0; }
+.delay-4 { animation-delay: 0.2s; opacity: 0; }
+.delay-5 { animation-delay: 0.25s; opacity: 0; }
+.delay-6 { animation-delay: 0.3s; opacity: 0; }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.pulse-dot { animation: pulse 2s ease-in-out infinite; }
+
+@keyframes slideIn { from { transform: translateX(110%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+.toast-enter { animation: slideIn 0.3s ease; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.8s linear infinite; }
