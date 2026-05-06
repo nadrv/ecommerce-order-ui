@@ -26,7 +26,7 @@ export const orderRepository: Map<string, OrderRecord> = new Map([
 ]);
 
 // Shipping Queue: FIFO based on timestamp
-export let shippingQueue: string[] = ['ORD-001', 'ORD-002', 'ORD-003', 'ORD-004', 'ORD-005', 'ORD-006'];
+export const shippingQueue: string[] = ['ORD-001', 'ORD-002', 'ORD-003', 'ORD-004', 'ORD-005', 'ORD-006'];
 
 // Customer Spending Service: customer_id -> total_spending
 export const customerSpending: Map<string, Customer> = new Map([
